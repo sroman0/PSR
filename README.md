@@ -1,81 +1,143 @@
-# PSR Exercises
+# PSR - Network Systems Programming
 
-Welcome to the **PSR Exercises** repository! This repository contains a series of exercises designed to help you understand and implement PHP Standards Recommendations (PSR). Each exercise folder focuses on different aspects of PSR, aimed at improving your coding standards and PHP skills.
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Esercitazione1](#esercitazione1)
-3. [Esercitazione2](#esercitazione2)
-4. [Esercitazione3](#esercitazione3)
-5. [Esercitazione4](#esercitazione4)
-6. [Esercitazione5](#esercitazione5)
-7. [Esercitazione6](#esercitazione6)
-8. [Esercitazione7](#esercitazione7)
-9. [Esercitazione8](#esercitazione8)
-10. [Esercitazione9](#esercitazione9)
-11. [Esercitazione10](#esercitazione10)
-12. [Contributing](#contributing)
-13. [License](#license)
-
-## Introduction
-
-PHP Standards Recommendations (PSR) are a set of coding standards published by the PHP-FIG group. This repository provides practical exercises to help you adhere to these standards in your projects.
-
-## Esercitazione1
-
-### Description
-Exercises related to the basic coding standards outlined in PSR-1. 
-
-### Goal
-Understand and implement basic file formatting and structure as per PSR-1.
-
-## Esercitazione2
-
-### Description
-Exercises focused on coding style guide as per PSR-2.
-
-### Goal
-Learn and apply consistent coding styles including indentation, line length, and braces.
-
-## Esercitazione3
-
-### Description
-Exercises related to the logger interface as defined in PSR-3.
-
-### Goal
-Implement a logger that conforms to the PSR-3 LoggerInterface.
-
-## Esercitazione4
-
-### Description
-Exercises on the autoloading standard defined in PSR-4.
-
-### Goal
-Set up autoloading for your project using Composer and PSR-4.
-
-## Esercitazione5 to Esercitazione10
-
-### Description
-Further exercises expanding on PSR concepts, including more advanced standards and real-world applications.
-
-### Goal
-Deepen understanding and practical application of various PSR standards.
-
-## Contributing
-
-We welcome contributions! If you have improvements or additional exercises to suggest, please create a pull request. Follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Create a new Pull Request.
-
-## License
-
-This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) file for more details.
+This repository contains practical implementations developed during the *"Programmazione di Sistemi in Rete (PSR)"* (Network Systems Programming) course at **Università degli Studi del Sannio**. The project focuses on web systems programming with an emphasis on TCP and UDP socket communication in both **C** and **Java**. It includes examples of client-server architectures, concurrent connection handling, and data transmission over networks.
 
 ---
 
-Happy coding and may your PHP be clean and maintainable!
+## 📑 Table of Contents
+- [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
+- [Requirements](#requirements)
+- [Installation and Usage](#installation-and-usage)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Compile and Run (C Projects)](#2-compile-and-run-c-projects)
+  - [3. Compile and Run (Java Projects)](#3-compile-and-run-java-projects)
+- [Implemented Features](#implemented-features)
+- [Testing and Results](#testing-and-results)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+---
+
+## 📖 Project Overview
+The **PSR** project aims to provide hands-on experience with network programming concepts and practical implementations. It covers:
+- **TCP and UDP communication**
+- **Client-server models** in both C and Java
+- **Concurrent connections management** (e.g., multi-threaded servers)
+- **Data serialization and transmission** techniques
+- **Socket creation and management** in different scenarios (e.g., echo servers, file transfer applications)
+
+This repository serves as a learning tool for understanding low-level network communication and building robust networked applications.
+
+---
+
+## 🗂️ Repository Structure
+```
+PSR/
+├── C/
+│   ├── tcp_server.c          # TCP server implementation in C
+│   ├── tcp_client.c          # TCP client implementation in C
+│   ├── udp_server.c          # UDP server implementation in C
+│   ├── udp_client.c          # UDP client implementation in C
+│   └── Makefile              # Build automation for C programs
+├── Java/
+│   ├── TCPServer.java        # TCP server implementation in Java
+│   ├── TCPClient.java        # TCP client implementation in Java
+│   ├── UDPServer.java        # UDP server implementation in Java
+│   ├── UDPClient.java        # UDP client implementation in Java
+├── tests/                    # Test scripts and sample data
+├── results/                  # Execution logs and output files
+├── LICENSE                   # Project license information
+└── README.md                 # Project documentation
+```
+
+---
+
+## ⚙️ Requirements
+Ensure you have the following installed:
+- **GCC** compiler (for C programs)
+- **Java JDK** (version 8 or higher)
+- **Make** (for compiling C projects)
+- Terminal or command-line interface for running programs
+
+### Install Dependencies (Ubuntu/Debian):
+```bash
+sudo apt update
+sudo apt install build-essential default-jdk
+```
+
+---
+
+## 🚀 Installation and Usage
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/sroman0/PSR.git
+cd PSR
+```
+
+### 2. Compile and Run (C Projects)
+#### Compile all C programs:
+```bash
+cd C
+make all
+```
+#### Run TCP Server and Client:
+```bash
+./tcp_server
+./tcp_client
+```
+#### Run UDP Server and Client:
+```bash
+./udp_server
+./udp_client
+```
+
+### 3. Compile and Run (Java Projects)
+#### Navigate to the Java folder and compile:
+```bash
+cd ../Java
+javac TCPServer.java TCPClient.java UDPServer.java UDPClient.java
+```
+#### Run TCP Server and Client:
+```bash
+java TCPServer
+java TCPClient
+```
+#### Run UDP Server and Client:
+```bash
+java UDPServer
+java UDPClient
+```
+
+---
+
+## 💡 Implemented Features
+- **TCP and UDP Servers/Clients**: Establish and manage connections.
+- **Concurrent Servers**: Handle multiple clients simultaneously.
+- **Reliable and Unreliable Data Transmission**: Demonstrate the differences between TCP and UDP.
+- **File Transfer Applications**: Send and receive files over the network.
+- **Error Handling**: Robust error detection and reporting.
+
+---
+
+## 🧪 Testing and Results
+- Test scripts are available in the `tests/` directory.
+- Execution results and logs can be found in the `results/` folder.
+- Example test run:
+```bash
+./tests/test_tcp_connection.sh
+./tests/test_udp_packet_loss.sh
+```
+
+---
+
+## 📜 License
+This project is licensed under the **GNU General Public License v3.0**.  
+See the [LICENSE](https://github.com/sroman0/PSR/blob/main/LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+Developed during the *"Programmazione di Sistemi in Rete (PSR)"* course at **Università degli Studi del Sannio**.  
+Special thanks to the instructors and classmates for their support and guidance.
